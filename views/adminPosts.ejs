@@ -6,6 +6,7 @@
   <title><%= title %></title>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <style>
     /* Color Variables */
     :root {
@@ -31,8 +32,8 @@
     }
     
     header {
-      background-color: var(--primary-color);
-      color: var(--white-color);
+      background-color: var(--primary-color); 
+      color: white;
       padding: 15px 0;
       text-align: center;
     }
@@ -51,6 +52,11 @@
     nav ul li {
       display: inline-block;
       margin: 0 10px;
+      background: none;
+      border: none;
+      box-shadow: none;
+      /* border: none;  
+      box-shadow: none; */
     }
     
     nav ul li a {
@@ -64,50 +70,60 @@
       color: var(--background-color);
       text-decoration: underline;
     }
-    
-    
-   
-    
+
+
+
     h1 {
       text-align: center;
-      color:white;;
+      color: var(--white-color);
       font-size: 2rem;
       margin-bottom: 30px;
       border-bottom: 2px solid var(--secondary-color);
       padding-bottom: 10px;
     }
 
+    /* Create Post Button */
     a.create-post {
-      display: inline-block;
-      margin-bottom: 30px;
-      padding: 12px 20px;
-      background-color: var(--green-accent);
-      color: var(--white-color);
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
-    }
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 12px 20px;
+  background-color: var(--green-accent);
+  color: var(--white-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Added margin-top for additional space between the heading and the button */
+}
 
     a.create-post:hover {
       background-color: #27ae60;
     }
-    
+
+    /* Post List Styles */
     ul {
       list-style: none;
       padding: 0;
     }
 
-
-    h2 {
-      margin: 0;
-     
-      font-size: 1.5rem;
-      border-bottom: 1px solid var(--secondary-color);
-      padding-bottom: 10px;
+    li {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: var(--white-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
+
+   h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 10px;
+  color: var(--primary-color);
+  margin-bottom: 20px; /* Added margin-bottom for spacing between the heading and the button */
+}
 
     p {
       margin: 10px 0;
@@ -146,7 +162,8 @@
     button:hover {
       background-color: #c0392b;
     }
-    
+
+    /* Footer Styles */
     footer {
       text-align: center;
       padding: 20px;
@@ -156,24 +173,35 @@
       width: 100%;
       bottom: 0;
     }
-    
+
     footer p {
       margin: 0;
       font-size: 1rem;
     }
-    
+
+    /* Content Container */
+    .content {
+      flex-grow: 1;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: var(--white-color);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
     /* Responsive Styles */
     @media (max-width: 768px) {
       header h1 {
         font-size: 1.5rem;
       }
-      
+
       nav ul {
         flex-direction: column;
         align-items: center;
         gap: 10px;
       }
-      
+
       .content {
         padding: 15px;
         margin: 10px;
@@ -197,16 +225,8 @@
         font-size: 0.9rem;
       }
     }
-    .content {
-      flex-grow: 1;
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: var(--white-color);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-  </style>
+</style>
+
 </head>
 <body>
   <header>
@@ -239,8 +259,4 @@
     </ul>
   </div>
 
- <footer>
-    <p>Blog Application &copy; 2024</p>
-  </footer>
-</body>
-</html>
+  <%- include('partials/footer.ejs') %>
